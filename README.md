@@ -7,3 +7,19 @@
 
 Задание 2
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/02.png?raw=true)
+
+
+Задание 3
+![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/03.png)
+
+Задание 4
+![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/04.png)
+
+Задание 5
+![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/05.png)
+
+Задание 6
+![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/06.png)
+
+Задание 7
+![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/07.png)
