@@ -4,9 +4,9 @@
 
 Задание 1
 
-nombre = input("Имя: ")
-edad = int(input("Возраст: "))
-print(f"Привет, {nombre}! Через год тебе будет {edad + 1}.")
+name = input()
+age = int(input())
+print(f"Привет, {name}! Через год тебе будет {age + 1}.")
 
 ![alt](images/lab01/01.png)
 
@@ -23,43 +23,46 @@ print(f"sum={sum_:.2f}; avg={avg_:.2f}")
 
 Задание 3
 
-price = 1000.0
-discount = 15.0
-vat = 20.0
+price = int(input())
+discount = int(input())
+vat = int(input())
 
-base = price * (1 - discount / 100)
-vat_amount = base * (vat / 100)
+base = price * (1 - discount/100)
+vat_amount = base * (vat/100)
 total = base + vat_amount
 
-print(f"Precio inicial: {price:.2f} ₽")
-print(f"Descuento: {discount:.2f}%")
-print(f"Base después del descuento: {base:.2f} ₽")
-print(f"IVA ({vat:.2f}%): {vat_amount:.2f} ₽")
-print(f"Total a pagar: {total:.2f} ₽")
+print(f"База после скидки: {base:.2f} $")
+print(f"Ндс              : {vat_amount:.2f} $")
+print(f"Итого к оплате   : {total:.2f} $")
 
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/03.png)
 
 Задание 4
 
-minutes = int(input("Minutes: "))
-hours = minutes // 60
-remaining_minutes = minutes % 60
-print(f"{hours}:{remaining_minutes:02d}")
+m = int(input())
+
+hours = m // 60
+minutes = m % 60
+
+print(f"{hours}:{minutes:02d}")
 
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/04.png)
 
 Задание 5
 
-fio = input().strip()  
-palabras = fio.split()  
-inic = ''
-for palabra in palabras:
-    if palabra:  
-        inic += palabra[0].upper()  
-len_ = len(fio)  
-print(f"ФИО: {fio}")
-print(f"Инициалы: {inic}.")
-print(f"Длина (символов): {len_}")
+fio_input = input()
+fio_new = ' '.join(fio_input.split())
+
+words = fio_new.split()
+
+initials = ''.join([word[0].upper() for word in words])
+
+length = len(fio_new)
+
+print(f"ФИО             : {fio_input}")
+print(f"Инициалы        : {initials}.")
+print(f"Длина (символов): {length}")
+
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/05.png)
 
 Задание 6
@@ -74,10 +77,10 @@ for i in range(n):
     else:
         zaochn += 1
 print(ochn, zaochn)
+
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/06.png)
 
 Задание 7
-
 str_ = str(input())
 
 newstr_ = ''
@@ -106,4 +109,5 @@ shag = index_second - index_first
 for i in range(index_first, index_last + 1, shag):
     newstr_ += str_[i]
 print(newstr_)
+
 ![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/07.png)
