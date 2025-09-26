@@ -14,7 +14,7 @@ print(f"Привет, {name}! Через год тебе будет {age + 1}.")
 
 Задание 2
 
-
+```
 a = float(input().replace(',', '.'))
 b = float(input().replace(',', '.'))
 sum_ = a + b
