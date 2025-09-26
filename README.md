@@ -22,7 +22,7 @@ avg_ = sum_ / 2
 print(f"sum={sum_:.2f}; avg={avg_:.2f}")
 ```
 
-![alt](https://github.com/diegoparra93/python_labs/blob/main/images/lab01/02.png?raw=true)
+![alt]([images/lab01/02.png)
 
 
 Задание 3
