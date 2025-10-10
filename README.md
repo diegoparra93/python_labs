@@ -165,3 +165,4 @@ def format_record(rec: tuple[str, str, float]) -> str:
     return result
 ```
 ![photo3)(https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/03.png)
+
