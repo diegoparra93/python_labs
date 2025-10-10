@@ -116,37 +116,52 @@ def col_sums(mat):
 ### Задание 3
 
 ```
-def format_record(rec):
-    # Separate data
-    name = rec[0]
-    group = rec[1] 
-    grade = rec[2]
+def format_record(rec: tuple[str, str, float]) -> str:
     
-    # Clean name spaces
+    if not isinstance(rec, tuple):
+        raise TypeError("Input must be a tuple")
+    
+    if len(rec) != 3:
+        raise ValueError("Tuple must have exactly 3 elements")
+    
+    name, group, grade = rec
+    
+    if not isinstance(name, str):
+        raise TypeError("Name must be a string")
+    
+    if not isinstance(group, str):
+        raise TypeError("Group must be a string")
+    
+    if not isinstance(grade, (int, float)):
+        raise TypeError("GPA must be a number")
+    
+    if not name.strip():
+        raise ValueError("Name cannot be empty")
+    
+    if not group.strip():
+        raise ValueError("Group cannot be empty")
+    
+    if grade < 0:
+        raise ValueError("GPA cannot be negative")
+    
     name = name.strip()
     while "  " in name:
         name = name.replace("  ", " ")
-    
-    # Capitalize
+
     name = name.title()
-    
-    # Split words
+
     parts = name.split()
     last_name = parts[0]
-    
-    # Make initials
+ 
     initials = ""
     if len(parts) > 1:
         initials = parts[1][0] + "."
     if len(parts) > 2:
-        initials = initials + parts[2][0] + "."
-    
-    # Format GPA with 2 decimals
+     initials = initials + parts[2][0] + "."
     gpa_str = f"{grade:.2f}"
-    
-    # Put everything together
+
     result = last_name + " " + initials + ", gr. " + group + ", GPA " + gpa_str
     
     return result
 ```
-![Photo3](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/03_png.png)
+![photo 3)(https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/03.png?raw=true)
