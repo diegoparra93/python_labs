@@ -164,6 +164,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     
     return result
 ```
-![Photo3](width="2136" height="412" alt="image" src="https://github.com/user-attachments/assets/40c6b44b-87e5-400d-abf2-f51593ad611b" />)
+![Photo3](<img width="2136" height="412" alt="image" src="https://github.com/user-attachments/assets/70ce3d9e-078c-40a3-b85f-96fbdcb213e3" />
+
 
 
