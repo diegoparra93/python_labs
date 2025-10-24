@@ -172,6 +172,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
 ### Задание 1
 
 '''
+
 def normalize(text):
     text = text.lower()
     replacements = {
