@@ -39,7 +39,7 @@ def flatten(mat):
     
     return result
 ```
-![Photo 1](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/01%20.png)
+![Photo 1](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/01%20.png)
 
 ### Задание 2
 ```
@@ -109,7 +109,7 @@ def col_sums(mat):
     
     return sums
 ```
-![Photo 2](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/02.png)
+![Photo 2](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/02.png)
 
 
 
@@ -164,7 +164,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     
     return result
 ```
-![Photo3](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/03.png)
+![Photo3](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/03.png)
 
 
 ## Лабораторная работа 3
@@ -325,7 +325,7 @@ if __name__ == "__main__":
 ![Photo 2](https://github.com/diegoparra93/python_labs/blob/main/images/Lab03/Lab3_2task.png)
 
 
-## Лабораторная работа 3
+## Лабораторная работа 4
 
 ### Задание 1
 
