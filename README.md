@@ -260,7 +260,7 @@ if __name__ == "__main__":
     pass
 
 ```
-    
+![photo 1](https://github.com/diegoparra93/python_labs/blob/main/images/Lab03/Lab3_1task.png)
 
 
 
