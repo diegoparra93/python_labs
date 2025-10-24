@@ -167,11 +167,11 @@ def format_record(rec: tuple[str, str, float]) -> str:
 ![Photo3](https://github.com/diegoparra93/python_labs/blob/main/images/lab02/lab02/03.png)
 
 
-##Лабораторная работа 3
+## Лабораторная работа 3
 
 ### Задание 1
 
-'''
+```
 
 def normalize(text):
     text = text.lower()
@@ -259,7 +259,7 @@ print(f"Top 5: {top_ruso}")
 if __name__ == "__main__":
     pass
 
-'''
+```
     
 
 
