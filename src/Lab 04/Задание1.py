@@ -5,9 +5,8 @@ from typing import Iterable, Sequence, Union
 
 def read_text(path: Union[str, Path], encoding: str = "utf-8") -> str:
     p = Path(path)
+
     return p.read_text(encoding=encoding)
-
-
 def write_csv(rows: Iterable[Sequence], path: Union[str, Path],
               header: tuple[str, ...] | None = None) -> None:
     p = Path(path)
@@ -47,3 +46,6 @@ if __name__ == "__main__":
     with open("data/lab04/check.csv", "r", encoding="utf-8") as f:
         print("CSV content:")
         print(f.read())
+
+
+write_csv(['word', 'word'], './some.json')
