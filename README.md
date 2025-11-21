@@ -554,7 +554,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(data)
-![Photo1](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.10.35.png)
 
 ```
+![Photo1](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.10.35.png)
 ### Задание 2
