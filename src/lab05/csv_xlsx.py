@@ -5,41 +5,41 @@ from openpyxl.utils import get_column_letter
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     """
-    Convierte CSV a XLSX usando openpyxl
+    Converts CSV to XLSX using openpyxl
     """
-    print(f"🔍 Iniciando conversión: {csv_path} → {xlsx_path}")
+    print(f"Starting conversion: {csv_path} → {xlsx_path}")
     
-    # Validar que el archivo existe
+    # Check if the file exists
     csv_file = Path(csv_path)
     if not csv_file.exists():
-        raise FileNotFoundError(f"Archivo CSV no encontrado: {csv_path}")
+        raise FileNotFoundError(f"CSV file not found: {csv_path}")
     
-    # Leer CSV
+    # Read CSV file
     with open(csv_path, 'r', encoding='utf-8') as cf:
         reader = csv.reader(cf)
         rows = list(reader)
     
-    print(f"📊 Filas leídas del CSV: {len(rows)}")
+    print(f"Rows read from CSV: {len(rows)}")
     
     if not rows:
-        raise ValueError("El archivo CSV está vacío")
+        raise ValueError("CSV file is empty")
     
-    # Mostrar contenido para debug
+    # Show content for debugging
     for i, row in enumerate(rows):
-        print(f"  Fila {i}: {row}")
+        print(f"  Row {i}: {row}")
     
-    # Crear workbook y worksheet
+    # Create workbook and worksheet
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"
     
-    # Escribir datos
+    # Write data to Excel
     for row in rows:
         ws.append(row)
     
-    print("📝 Datos escritos en XLSX")
+    print("Data written to XLSX")
     
-    # Ajustar auto-ancho de columnas
+    # Adjust auto-width for columns
     for col_idx, column in enumerate(ws.columns, 1):
         max_length = 0
         column_letter = get_column_letter(col_idx)
@@ -53,18 +53,26 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         
         adjusted_width = max(max_length + 2, 8)
         ws.column_dimensions[column_letter].width = adjusted_width
-        print(f"  📏 Columna {column_letter}: ancho {adjusted_width}")
+        print(f"  Column {column_letter}: width {adjusted_width}")
     
-    # Crear directorio si no existe
+    # Create directory if it doesn't exist
     Path(xlsx_path).parent.mkdir(parents=True, exist_ok=True)
     
-    # Guardar archivo (¡ESTA ES LA PARTE IMPORTANTE!)
+    # Save the file (THIS IS THE IMPORTANT PART!)
     wb.save(xlsx_path)
-    print(f"💾 XLSX guardado exitosamente: {xlsx_path}")
+    print(f"XLSX saved successfully: {xlsx_path}")
     
-    # Verificar que se creó
+    # Verify that the file was created
     if Path(xlsx_path).exists():
         file_size = Path(xlsx_path).stat().st_size
-        print(f"📁 Tamaño del archivo: {file_size} bytes")
+        print(f"File size: {file_size} bytes")
     else:
-        print("❌ ERROR: El archivo XLSX no se creó")
+        print("ERROR: XLSX file was not created")
+
+# Example of how to use the function:
+if __name__ == "__main__":
+    try:
+        csv_to_xlsx("data/samples/people.csv", "data/out/people.xlsx")
+        print("Conversion completed successfully!")
+    except Exception as e:
+        print(f"Error during conversion: {e}")

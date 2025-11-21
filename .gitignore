@@ -1,0 +1,9 @@
+
+# Archivos temporales de Excel
+~$*.xlsx
+
+# Archivos del sistema Mac
+.DS_Store
+
+# Archivos de salida generados (opcional - si no quieres subirlos)
+data/out/
