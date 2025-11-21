@@ -487,7 +487,7 @@ if __name__ == "__main__":
 ## Лабораторная работа 5
 
 ### Задание 1
-
+```
 import csv
 import json
 from pathlib import Path
@@ -554,4 +554,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(data)
+
+```
 ### Задание 2
