@@ -780,6 +780,8 @@ if __name__ == "__main__":
 ![Photo 3](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/03_text_help.png)
 ![Photo 4](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/04_json2csv.png)
 ![Photo 5](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/05_csv2json.png)
+
+#### Помошь по Командам
 ![Photo 6](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/06_convert_help.png)
 ![Photo 7](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/07_output_files.png)
 
