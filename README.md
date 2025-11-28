@@ -782,4 +782,5 @@ if __name__ == "__main__":
 ![Photo 5](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/05_csv2json.png)
 ![Photo 6](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/06_convert_help.png)
 ![Photo 7](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/07_output_files.png)
+###Тесты по подкомандам
 ![Photo 8](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/08_file_contents.png)
