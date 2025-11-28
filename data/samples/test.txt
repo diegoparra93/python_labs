@@ -1,0 +1,4 @@
+This is a test file for the laboratory.
+The file contains several repeated words.
+Words like file, words, laboratory appear multiple times.
+Frequency analysis will show which are the most common.

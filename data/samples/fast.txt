@@ -1,0 +1,4 @@
+Este es un archivo de prueba rápido.
+Contiene varias líneas para probar el comando cat.
+Línea tres del archivo.
+Línea final para testing.
