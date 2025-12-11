@@ -630,3 +630,117 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 ![photo 3](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.12.47.png)
 ![photo 4](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.13.07.png)
 ![photo 5](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.29.14.png)
+
+
+## Лабораторная работа 7
+
+
+### Задание A
+
+```
+# src/lib/text.py
+# Simple text utilities used in labs
+
+
+def normalize(text: str) -> str:
+    """
+    Normalize text: convert to lower case, replace CR/LF/TAB with spaces,
+    collapse multiple whitespace into a single space, strip edges.
+    """
+    s = text.replace("\r", " ").replace("\n", " ").replace("\t", " ")
+    s = s.lower()
+
+    # REQUIRED: replace Cyrillic ё with е
+    s = s.replace("ё", "е")
+
+    parts = s.split()  # splits on any whitespace and collapses
+    return " ".join(parts)
+
+
+def tokenize(text: str) -> list[str]:
+    """
+    Naive tokenization: normalize, split on whitespace, strip punctuation on edges.
+    Returns list of tokens (strings).
+    """
+    import string
+
+    norm = normalize(text)
+    tokens: list[str] = []
+    for tok in norm.split():
+        tok = tok.strip(string.punctuation + "«»“”—…")
+        if tok:
+            tokens.append(tok)
+    return tokens
+
+
+def count_freq(tokens: list[str]) -> dict[str, int]:
+    """
+    Count frequency of tokens. Returns dict token -> count.
+    """
+    freq: dict[str, int] = {}
+    for t in tokens:
+        freq[t] = freq.get(t, 0) + 1
+    return freq
+
+
+def top_n(freq: dict[str, int], n: int) -> list[tuple[str, int]]:
+    """
+    Return top n items sorted by frequency descending.
+    For ties (same frequency) sorts words alphabetically ascending.
+    Returns list of (word, count).
+    """
+    items = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
+    return items[:n]
+```
+### Задание B - Тесты для src/lab05/json_csv.py
+
+```
+# src/lab05/json_csv.py
+import json
+import csv
+from typing import List, Dict
+
+
+def json_to_csv(src_path: str, dst_path: str) -> None:
+    """
+    Read JSON file at src_path (expected: list of dicts) and write a CSV to dst_path.
+    Raises ValueError for empty list or invalid JSON structure.
+    """
+    with open(src_path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError("JSON must contain a list of objects")
+
+    if len(data) == 0:
+        raise ValueError("JSON list is empty")
+
+    headers = list(data[0].keys())
+    with open(dst_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writeheader()
+        for obj in data:
+            writer.writerow(obj)
+
+
+def csv_to_json(src_path: str, dst_path: str) -> None:
+    """
+    Read CSV file and dump rows as a JSON list to dst_path.
+    Raises ValueError for empty CSV.
+    """
+    with open(src_path, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = list(reader)
+
+    if not rows:
+        raise ValueError("CSV is empty")
+
+    with open(dst_path, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)
+```
+![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/A.png)
+![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/B.png)
+![Photo C](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/C.png)
+![Photo D]()https://github.com/diegoparra93/python_labs/blob/main/images/lab07/D.png
+
+
