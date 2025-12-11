@@ -630,3 +630,160 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 ![photo 3](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.12.47.png)
 ![photo 4](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.13.07.png)
 ![photo 5](https://github.com/diegoparra93/python_labs/blob/main/images/Lab05/Screenshot%202025-11-21%20at%2011.29.14.png)
+
+## Лабораторная работа 6
+
+### Задание 1
+
+```
+import argparse
+import sys
+from pathlib import Path
+
+def cat_command(input_file, number_lines=False):
+    try:
+        input_path = Path(input_file)
+        if not input_path.exists():
+            print(f"Error: File '{input_file}' not found")
+            return False
+            
+        with open(input_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            
+        for i, line in enumerate(lines, 1):
+            if number_lines:
+                print(f"{i:6}  {line.rstrip()}")
+            else:
+                print(line.rstrip())
+        return True
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+
+def stats_command(input_file, top=5):
+    try:
+        input_path = Path(input_file)
+        if not input_path.exists():
+            print(f"Error: File '{input_file}' not found")
+            return False
+            
+        with open(input_path, 'r', encoding='utf-8') as f:
+            text = f.read()
+            
+        words = text.lower().split()
+        word_count = {}
+        
+        for word in words:
+            clean_word = ''.join(c for c in word if c.isalnum())
+            if clean_word and len(clean_word) > 2:
+                word_count[clean_word] = word_count.get(clean_word, 0) + 1
+        
+        sorted_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
+        
+        print(f"Top {top} most frequent words in '{input_file}':")
+        print("-" * 40)
+        for i, (word, count) in enumerate(sorted_words[:top], 1):
+            print(f"{i:2}. {word:<15} {count:>3} times")
+            
+        return True
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+
+def main():
+    parser = argparse.ArgumentParser(description="CLI tools for text processing")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    
+    cat_parser = subparsers.add_parser("cat", help="Display file content")
+    cat_parser.add_argument("--input", required=True)
+    cat_parser.add_argument("-n", action="store_true", help="Number lines")
+    
+    stats_parser = subparsers.add_parser("stats", help="Word frequency statistics")
+    stats_parser.add_argument("--input", required=True)
+    stats_parser.add_argument("--top", type=int, default=5)
+    
+    args = parser.parse_args()
+    
+    if args.command == "cat":
+        success = cat_command(args.input, args.n)
+    elif args.command == "stats":
+        success = stats_command(args.input, args.top)
+    else:
+        print("Command not recognized")
+        success = False
+        
+    sys.exit(0 if success else 1)
+
+if __name__ == "__main__":
+    main()
+```
+
+### Задание 2
+
+```
+import argparse
+import json
+import csv
+import sys
+
+def main():
+    parser = argparse.ArgumentParser(description="Data format converters")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    
+    p1 = subparsers.add_parser("json2csv", help="Convert JSON to CSV")
+    p1.add_argument("--in", dest="input", required=True)
+    p1.add_argument("--out", dest="output", required=True)
+    
+    p2 = subparsers.add_parser("csv2json", help="Convert CSV to JSON") 
+    p2.add_argument("--in", dest="input", required=True)
+    p2.add_argument("--out", dest="output", required=True)
+    
+    p3 = subparsers.add_parser("csv2xlsx", help="Convert CSV to XLSX")
+    p3.add_argument("--in", dest="input", required=True)
+    p3.add_argument("--out", dest="output", required=True)
+    
+    args = parser.parse_args()
+    
+    if args.command == "json2csv":
+        with open(args.input, 'r') as f:
+            data = json.load(f)
+        with open(args.output, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=data[0].keys())
+            writer.writeheader()
+            writer.writerows(data)
+        print(f"Converted {args.input} to {args.output}")
+        
+    elif args.command == "csv2json":
+        data = []
+        with open(args.input, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                data.append(row)
+        with open(args.output, 'w') as f:
+            json.dump(data, f, indent=2)
+        print(f"Converted {args.input} to {args.output}")
+        
+    elif args.command == "csv2xlsx":
+        print("CSV to XLSX requires openpyxl library")
+        print("Run: pip install openpyxl")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Tests
+
+![Photo 1](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/01_cat_command.png)
+![Photo 2](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/02_stats_command.png)
+![Photo 3](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/03_text_help.png)
+![Photo 4](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/04_json2csv.png)
+![Photo 5](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/05_csv2json.png)
+
+#### Помошь по Командам
+![Photo 6](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/06_convert_help.png)
+![Photo 7](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/07_output_files.png)
+
+#### Тесты по подкомандам
+![Photo 8](https://github.com/diegoparra93/python_labs/blob/main/images/lab06/08_file_contents.png)
