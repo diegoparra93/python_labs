@@ -741,6 +741,6 @@ def csv_to_json(src_path: str, dst_path: str) -> None:
 ![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/A.png)
 ![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/B.png)
 ![Photo C](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/C.png)
-![Photo D]()https://github.com/diegoparra93/python_labs/blob/main/images/lab07/D.png
+![Photo D](https://github.com/diegoparra93/python_labs/blob/main/images/lab07/D.png)
 
 
