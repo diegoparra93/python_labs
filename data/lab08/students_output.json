@@ -1,0 +1,20 @@
+[
+  {
+    "full_name": "Ivanov Ivan Ivanovich",
+    "birthdate": "2000-05-15",
+    "group": "SE-001",
+    "gpa": 4.5
+  },
+  {
+    "full_name": "Petrova Maria Sergeevna",
+    "birthdate": "2001-11-23",
+    "group": "SE-002",
+    "gpa": 4.8
+  },
+  {
+    "full_name": "Sidorov Alexey Petrovich",
+    "birthdate": "1999-03-10",
+    "group": "SE-001",
+    "gpa": 3.9
+  }
+]
