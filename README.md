@@ -1215,7 +1215,7 @@ if __name__ == "__main__":
 
 ## Лабораторная работа 10
 
-###Task A_Structures.py
+### Task A_Structures.py
 
 ```
 from collections import deque
@@ -1274,7 +1274,8 @@ class Queue:
 
     ```
 
-    ###TASKB_linked_list.py
+    ### TASKB_linked_list.py
+    
     ```
     class Node:
     def __init__(self, value):
