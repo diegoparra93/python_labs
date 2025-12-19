@@ -1216,9 +1216,12 @@ if __name__ == "__main__":
 
 ## Лабораторная работа 10
 
-### TaskA_Structures
+### Результаты
 
 ```
+python
+print(f"Группы: {estadisticas['groups']}")
+
 from collections import deque
 
 class Stack:
