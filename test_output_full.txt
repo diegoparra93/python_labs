@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0 -- /Users/diegoparra/python/python_labs/.venv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/diegoparra/python/python_labs
+plugins: cov-7.0.0
+collecting ... collected 0 items
+
+============================ no tests ran in 0.01s =============================

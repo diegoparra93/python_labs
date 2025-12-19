@@ -1,0 +1,9 @@
+Script started on Fri Dec 12 09:30:49 2025
+[1m[7m%[27m[1m[0m                                                                                                                                 [0m[27m[24m[Jdiegoparra@MacBook-Air-de-Diego PYTHON_LABS % [K[?2004hmmkdir src/       m  lls[?2004l
+README.md		create_output.py	requirements.txt	test_output_full.txt
+README_files		data			some.json		test_session.txt
+_venv			images			src			tests
+[1m[7m%[27m[1m[0m                                                                                                                                 [0m[27m[24m[Jdiegoparra@MacBook-Air-de-Diego PYTHON_LABS % [K[?2004hmmkdir PYTHON_LABS/images/LAb  ab08[?2004l
+mkdir: PYTHON_LABS/images: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                                                                 [0m[27m[24m[Jdiegoparra@MacBook-Air-de-Diego PYTHON_LABS % [K[?2004hmmkdir -p images.Lab08[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                 [0m[27m[24m[Jdiegoparra@MacBook-Air-de-Diego PYTHON_LABS % [K[?2004h

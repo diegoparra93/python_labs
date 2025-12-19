@@ -1,7 +1,7 @@
 fio = input().strip()  # strip() quita espacios al inicio y final
 palabras = fio.split()  # split() divide en palabras
 
-inic = ''
+inic = ""
 for palabra in palabras:
     if palabra:  # Si la palabra no está vacía
         inic += palabra[0].upper()  # Primera letra en mayúscula

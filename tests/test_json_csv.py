@@ -31,15 +31,15 @@ def test_csv_to_json_roundtrip(tmp_path: Path):
     src = tmp_path / "people.csv"
     dst = tmp_path / "people.json"
 
-    with src.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['name', 'age'])
+    with src.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["name", "age"])
         writer.writeheader()
-        writer.writerow({'name': 'Alice', 'age': '22'})
-        writer.writerow({'name': 'Bob', 'age': '25'})
+        writer.writerow({"name": "Alice", "age": "22"})
+        writer.writerow({"name": "Bob", "age": "25"})
 
     csv_to_json(str(src), str(dst))
 
-    data = json.loads(dst.read_text(encoding='utf-8'))
+    data = json.loads(dst.read_text(encoding="utf-8"))
     assert len(data) == 2
     assert set(data[0].keys()) == {"name", "age"}
 

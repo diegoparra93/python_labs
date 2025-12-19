@@ -1,38 +1,39 @@
 def transpose(mat):
-    # If esta vacio, uso esta formula. 
+    # If esta vacio, uso esta formula.
     if mat == []:
         return []
-    
+
     # Check el tamano del primer row
     size = len(mat[0])
-    
+
     # проверьте, имеют ли все строки одинаковый размер - verificar si todas las rows tienen el mismo tamano
     for row in mat:
         if len(row) != size:
             raise ValueError("not rectangular")
-    
+
     new_matrix = []
-    
+
     # Para cada columna - для каждого столбца
     for j in range(len(mat[0])):
         new_row = []
-        # For each row  
+        # For each row
         for i in range(len(mat)):
             new_row.append(mat[i][j])
         new_matrix.append(new_row)
-    
+
     return new_matrix
+
 
 def row_sums(mat):
     if mat == []:
         return []
-    
+
     # Check if rectangular - проверьте, является ли он прямоугольным
     first_size = len(mat[0])
     for row in mat:
         if len(row) != first_size:
             raise ValueError("different rows")
-    
+
     results = []
     for row in mat:
         # Sum the row
@@ -40,19 +41,20 @@ def row_sums(mat):
         for number in row:
             total += number
         results.append(total)
-    
+
     return results
+
 
 def col_sums(mat):
     if not mat:
         return []
-    
+
     # Check if all rows same size
     size = len(mat[0])
     for row in mat:
         if len(row) != size:
             raise ValueError("weird matrix")
-    
+
     sums = []
     # For each column
     for col in range(len(mat[0])):
@@ -61,8 +63,9 @@ def col_sums(mat):
         for row in range(len(mat)):
             s = s + mat[row][col]
         sums.append(s)
-    
+
     return sums
+
 
 # Testing the functions
 print("=== Testing transpose ===")

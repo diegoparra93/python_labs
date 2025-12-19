@@ -26,7 +26,7 @@ def test_normalize(source, expected):
         ("punctuation: end.", ["punctuation", "end"]),
         ("mixed CASE", ["mixed", "case"]),
         ("", []),  # empty
-    ]
+    ],
 )
 def test_tokenize(source, expected_tokens):
     assert tokenize(source) == expected_tokens
