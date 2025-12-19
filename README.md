@@ -1369,7 +1369,8 @@ class SinglyLinkedList:
             current = current.next
         result.append("None")
         return " -> ".join(result)
-        ```
+```
+
 ### _init_,py      
 
 ```
