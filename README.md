@@ -1370,4 +1370,4 @@ class SinglyLinkedList:
         result.append("None")
         return " -> ".join(result)
 ```
-![Lab10](https://github.com/diegoparra93/python_labs/blob/main/images/Lab10/Lab10.png)
+![Lab 10](https://raw.githubusercontent.com/diegoparra93/python_labs/main/images/Lab10/Lab10.png)
