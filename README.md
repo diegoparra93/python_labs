@@ -1209,67 +1209,8 @@ if __name__ == "__main__":
     print(f"Grupos: {estadisticas['groups']}")
     ```
 
-![Photo A](images/Lab09/Lab9A.png)
-![Photo B](images/Lab09/Lab9B.png)
+![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9A.png)
+![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
 
 
 
-###Лабор 10
-
-### Structures.py
-
-```python
-from collections import deque
-
-class Stack:
-    def __init__(self):
-        self._data = []
-    
-    def push(self, item):
-        self._data.append(item)
-    
-    def pop(self):
-        if self.is_empty():
-            raise IndexError("Pop from empty stack")
-        return self._data.pop()
-    
-    def peek(self):
-        if self.is_empty():
-            return None
-        return self._data[-1]
-    
-    def is_empty(self):
-        return len(self._data) == 0
-    
-    def __len__(self):
-        return len(self._data)
-    
-    def __repr__(self):
-        return f"Stack({self._data})"
-
-class Queue:
-    def __init__(self):
-        self._data = deque()
-    
-    def enqueue(self, item):
-        self._data.append(item)
-    
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Dequeue from empty queue")
-        return self._data.popleft()
-    
-    def peek(self):
-        if self.is_empty():
-            return None
-        return self._data[0]
-    
-    def is_empty(self):
-        return len(self._data) == 0
-    
-    def __len__(self):
-        return len(self._data)
-    
-    def __repr__(self):
-        return f"Queue({list(self._data)})"
-```
