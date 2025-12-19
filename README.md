@@ -1209,12 +1209,14 @@ if __name__ == "__main__":
     print(f"Grupos: {estadisticas['groups']}")
     ```
 
-![PhotoA](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9A.png)
-![PhotoB](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
+![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9A.png)
+![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
 
-**## Лабораторная работа 10**
 
-**### TaskA_Structures**
+
+## Лабораторная работа 10
+
+### TaskA_Structures
 
 ```
 from collections import deque
