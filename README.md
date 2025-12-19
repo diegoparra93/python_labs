@@ -1378,3 +1378,4 @@ from .linked_list import Node, SinglyLinkedList
 
 __all__ = ['Stack', 'Queue', 'Node', 'SinglyLinkedList']
 ```
+![Photo 10](https://github.com/diegoparra93/python_labs/blob/main/images/Lab10/Lab10.png)
