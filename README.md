@@ -1271,7 +1271,7 @@ class Queue:
     
     def __repr__(self):
         return f"Queue({list(self._data)})"
-        ```
+```
 
 ### B - Linked.list.py
 
