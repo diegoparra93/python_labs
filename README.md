@@ -1212,10 +1212,9 @@ if __name__ == "__main__":
 ![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9A.png)
 ![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
 
+**## Лабораторная работа 10**
 
-## Лабораторная работа 10
-
-### Task A_Structures.py
+**### TaskA_Structures**
 
 ```
 from collections import deque
@@ -1274,7 +1273,7 @@ class Queue:
 
     ```
 
-    ### TASKB_linked_list.py
+### TASKB_linked_list.py
     
     ```
     class Node:
