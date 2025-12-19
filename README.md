@@ -1209,8 +1209,8 @@ if __name__ == "__main__":
     print(f"Grupos: {estadisticas['groups']}")
     ```
 
-![Photo A](https://raw.githubusercontent.com/diegoparra93/python_labs/main/images/Lab09/Lab9A.png)
-![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
+![PhotoA](https://raw.githubusercontent.com/diegoparra93/python_labs/main/images/Lab09/Lab9A.png)
+![PhotoB](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
 
 **## Лабораторная работа 10**
 
@@ -1370,4 +1370,4 @@ class SinglyLinkedList:
         result.append("None")
         return " -> ".join(result)
 ```
-![Lab 10](https://github.com/diegoparra93/python_labs/blob/main/images/Lab10/Lab10.png)
+![Lab10](https://github.com/diegoparra93/python_labs/blob/main/images/Lab10/Lab10.png)
