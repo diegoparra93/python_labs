@@ -1209,7 +1209,7 @@ if __name__ == "__main__":
     print(f"Grupos: {estadisticas['groups']}")
     ```
 
-![Photo A](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9A.png)
+![Photo A](https://raw.githubusercontent.com/diegoparra93/python_labs/main/images/Lab09/Lab9A.png)
 ![Photo B](https://github.com/diegoparra93/python_labs/blob/main/images/Lab09/Lab9B.png)
 
 **## Лабораторная работа 10**
